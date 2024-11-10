@@ -3,35 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nilsine Nice Nook for Notable New Prjoects</title>
+    <title>Nilsine Nice Nook for Notable New Projects</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            overflow-y: auto;
+            font-family: 'Inter', sans-serif;
+            color: #f8fafc;
+        }
+        #content {
+            position: relative;
+            z-index: 1;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
         }
         .animate-marquee {
             animation: marquee 30s linear infinite;
         }
-        #sketch-container canvas {
-            width: 100% !important;
-            height: 100% !important;
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
     </style>
 </head>
-<body class="min-h-screen bg-black font-['Inter'] text-gray-50">
-   
-
-    <div class="flex flex-col md:flex-row min-h-[calc(100vh-32px)]">
-        <!-- p5.js Sketch Section -->
-        <div id="sketch-container" class="h-64 md:h-auto md:w-1/2 bg-gradient-to-br from-gray-300 to-gray-100 order-last md:order-first"></div>
-        
-        <!-- Content Section -->
-        <main class="flex-1 flex flex-col">
-
-            <div class="px-1 pb-1 max-w-[800px] text-gray-50">
+<body class="bg-black font-['Inter'] text-gray-50">
+    
+    <!-- Content Section -->
+    <main class="flex flex-col items-center mx-auto max-w-5xl px-4 py-8 space-y-8">
                 <!-- Marquee Banner -->
                 <div class="border-b border-violet-600 overflow-hidden whitespace-nowrap py-2">
                     <div class="flex">
@@ -95,24 +102,24 @@
 
                 <!-- Content Grid -->
                 <div class="grid grid-cols-12 gap-x-8">
+                    <div class="border-t border-b py-6 border-violet-600 col-span-12">
+                        <h1 class="text-2xl font-bold italic text-center">Nilsine Wihtol</h1>
+                        <div class="italic text-gray-50 text-center">Interactive Artist and Creative Coder</div>
+                    </div>
                     <!-- Left Column - Profile Info -->
-                    <div class="col-span-12 md:col-span-4 space-y-6 mb-12">
+                    <div class="col-span-12 md:col-span-6 space-y-8 mb-12">
                         <div class="mx-auto border border-violet-600">
                             <img src="img/pictureMe.jpg" alt="Profile Image">
-                        </div>
-                        <div class="border-t border-b py-6 border-violet-600">
-                            <h1 class="text-2xl font-bold italic">Nilsine Wihtol</h1>
-                            <div class="italic text-gray-50">Interactive Artist and Creative Coder</div>
                         </div>
                     </div>
 
                     <!-- Right Column - Text Content -->
-                    <div class="col-span-12 md:col-span-8 space-y-6 mb-12">
+                    <div class="col-span-12 md:col-span-4 space-y-8 mb-12 text-center">
+                        <br>
                         <p>A sample sentence that introduces the page and/or me</p>
                         <p>A paagraph elaborating on my background and other stuff.</p>
                         <p>A final thing that also explains more stuff.</p>
                     </div>
-                    
                 </div>
                 <div class="px-4 py-12 border-t border-violet-600 text-gray-900">
                     <p class="text-gray-50">Put images and video of projects here.</p>
@@ -140,9 +147,9 @@
                         <!-- Gallery Item 3 -->
                         <div class="rounded-lg overflow-hidden shadow-lg transition-transform duration-200 hover:scale-105 bg-white">
                             <div class="relative">
-                                <img src="img/img1.png" alt="Wildlife" class="w-full h-48 object-cover">
-                                <div class="absolute bottom-0 left-0 right-0 p-2">
-                                    <h3 class="text-sm font-medium">Wildlife</h3>
+                                <img src="img/tree.jpg" alt="Third Thing Instalation" class="w-60 h-60 object-cover">
+                                <div class="absolute bottom-0 left-0 right-0 p-2 bg-white bg-opacity-25">
+                                    <h3 class="text-sm font-medium">Third Thing Instalation</h3>
                                 </div>
                             </div>
                         </div>
@@ -150,9 +157,9 @@
                         <!-- Gallery Item 4 -->
                         <div class="rounded-lg overflow-hidden shadow-lg transition-transform duration-200 hover:scale-105 bg-white">
                             <div class="relative">
-                                <img src="img/img1.png" alt="Abstract Art" class="w-full h-48 object-cover">
-                                <div class="absolute bottom-0 left-0 right-0 p-2">
-                                    <h3 class="text-sm font-medium">Abstract Art</h3>
+                                <img src="img/website.png" alt="Custom Gallery Website" class="w-60 h-60 object-cover">
+                                <div class="absolute bottom-0 left-0 right-0 p-2 bg-white bg-opacity-25">
+                                    <h3 class="text-sm font-medium text-center">Gallery Website</h3>
                                 </div>
                             </div>
                         </div>
@@ -160,9 +167,9 @@
                         <!-- Gallery Item 5 -->
                         <div class="rounded-lg overflow-hidden shadow-lg transition-transform duration-200 hover:scale-105 bg-white">
                             <div class="relative">
-                                <img src="img/OldFashionedLogoColor.png" alt="Processing" class="w-full h-48 object-cover">
-                                <div class="absolute bottom-0 left-0 right-0 p-2">
-                                    <h3 class="text-sm font-medium">Processing</h3>
+                                <img src="img/OldFashionedLogoColor.png" alt="Processing" class="w-60 h-60 object-cover">
+                                <div class="absolute bottom-0 left-0 right-0 p-2 bg-white bg-opacity-25">
+                                    <h3 class="text-sm font-medium text-center">Processing</h3>
                                 </div>
                             </div>
                         </div>
@@ -170,9 +177,9 @@
                         <!-- Gallery Item 6 -->
                         <div class="rounded-lg overflow-hidden shadow-lg transition-transform duration-200 hover:scale-105 bg-white">
                             <div class="relative">
-                                <img src="img/maxStarfield.png" alt="Integrated Max and P5" class="w-80 h-80 object-cover">
-                                <div class="absolute bottom-0 left-0 right-0 p-2 bg-slate-100">
-                                    <h3 class="text-sm font-medium">Integrated Max and p5</h3>
+                                <img src="img/maxStarfield.png" alt="Max Development" class="h-60 w-60 object-top">
+                                <div class="absolute bottom-0 left-0 right-0 p-2 bg-slate-100 bg-white bg-opacity-25">
+                                    <h3 class="text-sm font-medium text-center">Max Development</h3>
                                 </div>
                             </div>
                         </div>
@@ -180,9 +187,9 @@
                         <!-- Gallery Item 7 -->
                         <div class="rounded-lg overflow-hidden shadow-lg transition-transform duration-200 hover:scale-105 bg-white">
                             <div class="relative">
-                                <img src="img/monster2.png" alt="Interactive Fiction" class="w-full h-48 object-cover">
-                                <div class="absolute bottom-0 left-0 right-0 p-2">
-                                    <h3 class="text-sm font-medium">Interactive Fiction</h3>
+                                <img src="img/monster2.png" alt="Interactive Fiction" class="w-60 h-60 object-cover">
+                                <div class="absolute bottom-0 left-0 right-0 p-2 bg-white bg-opacity-50">
+                                    <h3 class="text-sm font-medium text-center">Interactive Fiction</h3>
                                 </div>
                             </div>
                         </div>
@@ -190,9 +197,9 @@
                         <!-- Gallery Item 8 -->
                         <div class="rounded-lg overflow-hidden shadow-lg transition-transform duration-200 hover:scale-105 bg-white">
                             <div class="relative">
-                                <img src="img/teardropThing.png" alt="Technology" class="w-full h-48 object-cover">
+                                <img src="img/teardropThing.png" alt="Javascript" class="w-60 h-60 object-cover">
                                 <div class="absolute bottom-0 left-0 right-0 p-2 bg-white bg-opacity-25">
-                                    <h3 class="text-sm font-medium text-center">Technology</h3>
+                                    <h3 class="text-sm font-medium text-center">Javascript</h3>
                                 </div>
                             </div>
                         </div>
@@ -203,254 +210,248 @@
     </div>
 
     <script>
-        let testParticles = [];
-        let maxParticles = 500;
-        let particleCount = 0;
 
-        let wave = [];
-        let waveStack = 5;
-        let waveDirection = 1;
-        let waveHCount = 1;
-        let waveVCount = 1;
-
-        let prevMouseX = 0;
-        let prevMouseY = 0;
+        // Define custom color palette (HSB mode allows smooth gradients)
+        let colorPalette;
 
         function setup() 
         {
-        let container = document.getElementById('sketch-container');
-        // Create canvas with container dimensions
-        let canvas = createCanvas(container.offsetWidth, container.offsetHeight);
-        // Move the canvas inside the container
-        canvas.parent('sketch-container');
+            let canvas = createCanvas(windowWidth, document.body.scrollHeight);
+            canvas.position(0, 0);
+            canvas.style('z-index', '-1');
 
+        background(55);
+        //noLoop(); // Static drawing, no need for continuous loop
+        
+        noFill(); // Only using strokes for the division lines
+        strokeWeight(2);
 
-        for (let i = 0; i < waveStack; i++)
-        {
-        wave[i] = new TestParticle("wave" + i, color(0+ 10*i,0 + 10*i,255-10 * i), 25 - 3*i, 150-15*i, width/2+7*i, 6-i, 0, 0, 0);
-        }
-        /* for (let i = 0; i < waveHCount; i++)
-        {
-        wave[i] = [];
-        waveDirection[i] = [];
-        for (let v = 0; v < waveVCount; v++)
-        {
-            wave[i][v] = [];
-            waveDirection[i][v] = 1;
-            for (let c = 0; c < waveStack; c++)
-            {
-            wave[i][v][c]= new TestParticle("wave" + i + v + c, color(0, 0, 255 - 8 * c), 5, width/waveHCount - width/(20*waveHCount)*c, 
-            i*width/waveHCount + width/(40*waveHCount)*c, v * height/waveVCount, 0, 0, 0);
-            }
-        }
-        }*/
-        }
+        colorPalette = [
+            color(180, 0, 0), //red       
+            color(26, 128, 0),    //green      
+            color(0, 0, 180),    //blue  
+            color(180, 0, 0), //red       
+            color(26, 128, 0),    //green      
+            color(0, 0, 180),    //blue 
+            color(26, 128, 0),    //green      
+            color(0, 0, 180),    //blue 
+            color(0, 0, 180),    //blue 
+            color(0, 0, 180),    //blue 
+        ];
 
-        function draw() 
-        {
-        background(0, 0, 0);
+        // Define the initial rectangle as the entire canvas
+        let initialRect = {
+            x: 0,
+            y: 0,
+            width: width,
+            height: height,
+            level: 1 // Starting depth level
+        };
 
-
-        for (let i = 0; i < waveStack; i++)
-        {
-        wave[i].display();
-        wave[i].changeHeight(waveDirection);
-        }
-        if (wave[0].pHeight > height || wave[0].pHeight <= 1)
-        {
-        waveDirection *= -1;
-        }
-        /*for(let h = 0; h < waveHCount; h++)
-        {
-        for(let v = 0; v < waveVCount; v++)
-        {
-            for(let c = 0; c < waveStack; c++)
-            {
-            wave[h][v][c].display();
-            wave[h][v][c].changeHeight(waveDirection[h][v])
-            }
-
-            if(wave[h][v][0].pHeight > height/waveVCount || wave[h][v][0].pHeight < 5)
-            {
-            waveDirection[h][v] *= -1;
-            }
-        }
-        }*/
-
-        if (mouseIsPressed)
-        {
-        particleGenerator();
-        }
-        if(particleCount > 0)
-        {
-        for(let i = 0; i < particleCount; i++)
-        {
-            testParticles[i].display();
-            testParticles[i].movement();
-            testParticles[i].changeColor();
-            /*if (testParticles[i].posX >= width - testParticles[i].pWidth || 
-                testParticles[i].posX <= 0 || testParticles[i].posY >= height - testParticles[i].pHeight ||
-                testParticles[i].posY <= 0)
-                {
-                testParticles.splice(i, 1);
-                i--;
-                particleCount--;
-                }*/
-        }
-        deleteParticles();
-        }
-        prevMouseX = mouseX;
-        prevMouseY = mouseY;
-        //fill(0,0,0);
-        //text(particleCount, width/2, height/2);
+        // Start subdivision with the custom color palette
+        divideRect(initialRect, 2, colorPalette, 0); // Start with the first color (pink)
         }
 
-        function particleGenerator()
-        {
-        if (particleCount < maxParticles)
-        {
-        testParticles[particleCount] = new TestParticle(particleCount, color(255, 0, 0), 5, 5,  mouseX, mouseY, mouseX - prevMouseX, mouseY - prevMouseY, frameCount);
-        particleCount++;
-        }
+        /**
+         * Recursively divides a rectangle based on the shuffled 2:3:5 ratio and applies a gradient.
+         * @param {Object} rect - The rectangle to divide.
+         * @param {Number} splitsLeft - Number of divisions left.
+         * @param {Array} colorPalette - The array of colors to cycle through.
+         * @param {Number} colorIndex - The index of the current color in the palette.
+         */
+        function divideRect(rect, splitsLeft, colorPalette, colorIndex) {
+        if (splitsLeft <= 0) return;
+
+        // Define and shuffle the ratio
+        let ratios = shuffleArray([2, 3, 5]);
+        const total = ratios.reduce((a, b) => a + b, 0);
+
+        // Horizontal and vertical division points
+        let divX = [];
+        let divY = [];
+
+        // Horizontal divisions
+        let currentX = rect.x;
+        for (let i = 0; i < ratios.length; i++) {
+            let sectionWidth = (ratios[i] / total) * rect.width;
+            divX.push(currentX + sectionWidth);
+            currentX += sectionWidth;
         }
 
-        function deleteParticles()
-        {
-        for (let i = 1; i < particleCount; i++)
-        {
-        for (let j = 0; j < particleCount; j++)
-        {
-            if(testParticles[i].collisionDetected(testParticles[j]))
-            {  
-            testParticles.splice(j, 1);
-            testParticles.splice(i, 1);
-            particleCount -= 2;
-            }
-        }
-        }
+        // Vertical divisions
+        let currentY = rect.y;
+        let vertRatios = shuffleArray([2, 3, 5]); // Shuffle for vertical divisions
+        for (let i = 0; i < vertRatios.length; i++) {
+            let sectionHeight = (vertRatios[i] / total) * rect.height;
+            divY.push(currentY + sectionHeight);
+            currentY += sectionHeight;
         }
 
-        class TestParticle
-        {
-        constructor(name, pColor, pHeight, pWidth, posX, posY, xSpeed, ySpeed, startFrame)
-        {
-            this.name = name;
-            this.pHeight = pHeight;
-            this.pWidth = pWidth;
-            this.posX = posX;
-            this.posY = posY;
-            if (xSpeed <= 0.1 && xSpeed >= -0.1)
-            {xSpeed = 0.5;}
-            if (ySpeed <= 0.1 && ySpeed >= -0.1)
-            {ySpeed = 0.5;}
-            this.xSpeed = xSpeed;
-            this.ySpeed = ySpeed;
-            this.pColor = pColor;
-            this.toRed = false;
-            this.toGreen = false;
-            this.toBlue = false;
-            this.ranNum = 0;
-            this.startFrame = startFrame;
+        // Set the stroke color from the current color in the palette
+        stroke(colorPalette[colorIndex % colorPalette.length]); // Loop back when exceeding color count
+
+        // Draw the division lines
+        // Vertical lines
+        for (let x of divX.slice(0, -1)) { // Exclude the last division which is the edge
+            stroke(colorPalette[colorIndex % colorPalette.length]);
+            line(x, rect.y, x, rect.y + rect.height);
+            colorIndex++;
         }
 
-        movement()
-        {
-            if(this.posX <= 0 || this.posX + this.pWidth >= width)
-            {
-            this.xSpeed = this.xSpeed * -(random(2));
-            }
-            if(this.posY <= 0 || this.posY + this.pHeight >= height)
-            {
-            this.ySpeed = this.ySpeed * -(random(2));
-            }
-            this.posX += this.xSpeed;
-            this.posY += this.ySpeed;
+        // Horizontal lines
+        for (let y of divY.slice(0, -1)) { // Exclude the last division which is the edge
+            stroke(colorPalette[colorIndex % colorPalette.length]);
+            line(rect.x, y, rect.x + rect.width, y);
+            colorIndex++;
         }
 
-        display()
-        {
-            noStroke();
-            fill(this.pColor);
-            rect(this.posX, this.posY, this.pWidth, this.pHeight, 45);
-        }
+        // Now, for each sub-rectangle, divide further
+        let sections = [];
 
-        changeColor()
-        { 
-            this.ranNum = int(random(1,4));
-            if(this.ranNum != 0)
-            {
-            if (this.ranNum == 1)
-            {
-                this.toRed = true;
-                this.toGreen = false;
-                this.toBlue = false;
-            }
-            else if (this.ranNum == 2)
-            {
-                this.toGreen = true;
-                this.toBlue = false;
-                this.toRed = false;
-
-            }
-            else if (this.ranNum == 3)
-            {
-                this.toBlue = true;
-                this.toGreen = false;
-                this.toRed = false;
-            }
-            }
-            if(this.toRed)
-            {
-            this.pColor = lerpColor(this.pColor, color(255,0,0), 0.25);
-            }
-            else if(this.toGreen)
-            {
-            this.pColor = lerpColor(this.pColor, color(0, 255, 0), 0.25);
-            }
-            else if(this.toBlue)
-            {
-            this.pColor = lerpColor(this.pColor, color(0,0,255), 0.25);
+        for (let i = 0; i < ratios.length; i++) {
+            for (let j = 0; j < vertRatios.length; j++) {
+            let subRect = {
+                x: i === 0 ? rect.x : divX[i - 1],
+                y: j === 0 ? rect.y : divY[j - 1],
+                width: (ratios[i] / total) * rect.width,
+                height: (vertRatios[j] / total) * rect.height,
+                level: rect.level + 1
+            };
+            sections.push(subRect);
             }
         }
 
-        changeWidth(newWidth)
-        {
-            this.pWidth += newWidth;
-        }
+        // Recursively divide each section
+        for (let section of sections) {
+            let isFiveRatio = ratios[sections.indexOf(section) % ratios.length] === 5;
+            let newSplitsLeft = splitsLeft - 1;
 
-        changeHeight(newHeight)
-        {
-            this.pHeight += newHeight;
-        }
-
-        breakApart()
-        {
-            let tempParticles = [];
-            let pieces = random(4);
-            for (let i = 0; i < pieces; i++)
-            {
-                tempParticles[i] = new TestParticle("name", this.drawColor, this.pHeight / pieces, this.pWidth / pieces, this.posX - i, this.posY - i, -this.xSpeed, -this.ySpeed);
+            // Allow additional division for sections with '5' ratio that haven't been split twice yet
+            if (section.level < 3 || (isFiveRatio && section.level < 4)) {
+            newSplitsLeft++;
             }
-            return tempParticles;
+
+            // Increment the color index as we subdivide further, looping through the palette
+            let newColorIndex = colorIndex; // Move to the next color
+
+            divideRect(section, newSplitsLeft, colorPalette, newColorIndex); // Recursively divide with next color
+        }
+        }
+        /**
+         * Shuffles an array randomly.
+         * @param {Array} array - The array to shuffle.
+         * @returns {Array} - The shuffled array.
+         */
+        function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
         }
 
-        collisionDetected(prevParticle)
-        {
-            if (frameCount > this.startFrame + 60 && frameCount > prevParticle.startFrame + 60)
-            {
-            let d = dist(this.posX, this.posY, prevParticle.posX, prevParticle.posY);
-            if (d > this.pWidth + this.pHeight)
-            { return true;}
-            else { return false;}
+        function windowResized() {
+            resizeCanvas(windowWidth, document.body.scrollHeight);
+                    background(55);
+
+            let initialRect = {
+            x: 0,
+            y: 0,
+            width: width,
+            height: height,
+            level: 1 // Starting depth level
+        };
+
+        // Start subdivision with the custom color palette
+        divideRect(initialRect, 2, colorPalette, 0); // Start with the first color (pink)
+        }
+
+        /**
+         * Recursively divides a rectangle based on the shuffled 2:3:5 ratio and applies a gradient.
+         * @param {Object} rect - The rectangle to divide.
+         * @param {Number} splitsLeft - Number of divisions left.
+         * @param {Array} colorPalette - The array of colors to cycle through.
+         * @param {Number} colorIndex - The index of the current color in the palette.
+         */
+        function divideRect(rect, splitsLeft, colorPalette, colorIndex) {
+        if (splitsLeft <= 0) return;
+
+        // Define and shuffle the ratio
+        let ratios = shuffleArray([2, 3, 5]);
+        const total = ratios.reduce((a, b) => a + b, 0);
+
+        // Horizontal and vertical division points
+        let divX = [];
+        let divY = [];
+
+        // Horizontal divisions
+        let currentX = rect.x;
+        for (let i = 0; i < ratios.length; i++) {
+            let sectionWidth = (ratios[i] / total) * rect.width;
+            divX.push(currentX + sectionWidth);
+            currentX += sectionWidth;
+        }
+
+        // Vertical divisions
+        let currentY = rect.y;
+        let vertRatios = shuffleArray([2, 3, 5]); // Shuffle for vertical divisions
+        for (let i = 0; i < vertRatios.length; i++) {
+            let sectionHeight = (vertRatios[i] / total) * rect.height;
+            divY.push(currentY + sectionHeight);
+            currentY += sectionHeight;
+        }
+
+        // Set the stroke color from the current color in the palette
+        stroke(colorPalette[colorIndex % colorPalette.length]); // Loop back when exceeding color count
+
+        // Draw the division lines
+        // Vertical lines
+        for (let x of divX.slice(0, -1)) { // Exclude the last division which is the edge
+            stroke(colorPalette[colorIndex % colorPalette.length]);
+            line(x, rect.y, x, rect.y + rect.height);
+            colorIndex++;
+        }
+
+        // Horizontal lines
+        for (let y of divY.slice(0, -1)) { // Exclude the last division which is the edge
+            stroke(colorPalette[colorIndex % colorPalette.length]);
+            line(rect.x, y, rect.x + rect.width, y);
+            colorIndex++;
+        }
+
+        // Now, for each sub-rectangle, divide further
+        let sections = [];
+
+        for (let i = 0; i < ratios.length; i++) {
+            for (let j = 0; j < vertRatios.length; j++) {
+            let subRect = {
+                x: i === 0 ? rect.x : divX[i - 1],
+                y: j === 0 ? rect.y : divY[j - 1],
+                width: (ratios[i] / total) * rect.width,
+                height: (vertRatios[j] / total) * rect.height,
+                level: rect.level + 1
+            };
+            sections.push(subRect);
             }
-            else
-            {return false;}
         }
 
-        //should display an image/shape that is changable
-        //arrayName.splice(arrayIndex, 1);
-        //break apart/collision?
+        // Recursively divide each section
+        for (let section of sections) {
+            let isFiveRatio = ratios[sections.indexOf(section) % ratios.length] === 5;
+            let newSplitsLeft = splitsLeft - 1;
+
+            // Allow additional division for sections with '5' ratio that haven't been split twice yet
+            if (section.level < 3 || (isFiveRatio && section.level < 4)) {
+            newSplitsLeft++;
+            }
+
+            // Increment the color index as we subdivide further, looping through the palette
+            let newColorIndex = colorIndex; // Move to the next color
+
+            divideRect(section, newSplitsLeft, colorPalette, newColorIndex); // Recursively divide with next color
         }
-    </script>
+        }
+
+</script>
 </body>
 </html>
